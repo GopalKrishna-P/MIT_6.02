@@ -1,4 +1,6 @@
 # file for PS1, Python Task 3
+import matplotlib  
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as p
 import numpy,os
 import PS1_tests

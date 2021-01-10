@@ -1,0 +1,76 @@
+Baseline 0:
+  bits to encode pixels: 250000
+
+Baseline 1:
+  total number of runs: 37712
+  bits to encode runs with fixed-length code: 301696
+
+Baseline 2:
+  bits in Lempel-Ziv compressed PNG file: 81208
+
+Experiment 1:
+  bits when Huffman-encoding runs: 111656
+  Top 10 run lengths [probability]:
+    1 [0.39]
+    2 [0.19]
+    3 [0.13]
+    4 [0.12]
+    5 [0.05]
+    7 [0.03]
+    6 [0.02]
+    8 [0.01]
+    0 [0.01]
+    255 [0.01]
+
+Experiment 2:
+  bits when Huffman-encoding runs by color: 95357
+  Top 10 white run lengths [probability]:
+    2 [0.25]
+    4 [0.20]
+    3 [0.19]
+    5 [0.08]
+    6 [0.05]
+    7 [0.05]
+    1 [0.04]
+    8 [0.02]
+    255 [0.02]
+    10 [0.02]
+  Top 10 black run lengths [probability]:
+    1 [0.73]
+    2 [0.13]
+    3 [0.07]
+    4 [0.03]
+    0 [0.02]
+    5 [0.01]
+    7 [0.01]
+    8 [0.00]
+    9 [0.00]
+    10 [0.00]
+
+Experiment 3:
+  bits when Huffman-encoding run pairs: 87310
+  Top 10 run-length pairs [probability]:
+    (2, 1) [0.20]
+    (4, 1) [0.15]
+    (3, 1) [0.12]
+    (5, 1) [0.07]
+    (3, 2) [0.04]
+    (7, 1) [0.03]
+    (2, 2) [0.03]
+    (4, 2) [0.03]
+    (1, 1) [0.03]
+    (6, 1) [0.03]
+
+Experiment 4:
+  bits when Huffman-encoding 4x4 image blocks: 71628
+  Top 10 4x4 blocks [probability]:
+    0xffff [0.55]
+    0xbbbb [0.02]
+    0xdddd [0.02]
+    0xeeee [0.01]
+    0x7777 [0.01]
+    0x7fff [0.01]
+    0xefff [0.01]
+    0xfff7 [0.01]
+    0xfffe [0.01]
+    0x6666 [0.01]

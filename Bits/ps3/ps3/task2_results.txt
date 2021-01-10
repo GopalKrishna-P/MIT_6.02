@@ -1,0 +1,2 @@
+Soft-metric Viterbi decoder tests complete!
+Soft decoding succeeded on test case: congratulations!

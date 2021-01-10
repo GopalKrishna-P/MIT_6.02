@@ -16,8 +16,14 @@ def decode(encoding_dict,encoded_message):
     encoded_msg: [1, 1, 0, 1, 0, 0, 1, 0, 1]
     returns 'ABCD'
     """
-    # Your code here
-    pass
+    res = []
+    code = []
+    for bit in encoded_message:
+        code += [bit]
+        if code in encoding_dict.values():
+            res += [encoding_dict.keys()[encoding_dict.values().index(code)]]
+            code = []
+    return res
 
 
 if __name__ == '__main__':

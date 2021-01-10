@@ -23,6 +23,21 @@ def equal(a, b):
 # in the template; you can preserve that, or change it as you wish.
 def syndrome_decode(codeword, n, k, G):
     ## YOUR CODE HERE
+
+##########################
+    syndromes = []
+    H = concatenate((G[:, k:].transpose(), identity(n-k, int)), axis=1)
+
+    for i in range(k):
+        syndromes.append(H[:, i])
+    
+    c = mod2(H * matrix(codeword).transpose())
+    if not equal(c, zeros((n-k, 1), int)):
+        for i in range(k):
+            if equal(c, syndromes[i]):
+                codeword[i] = int(not codeword[i])
+                break
+    
     return codeword[:k]
 
 if __name__ == '__main__':

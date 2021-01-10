@@ -1,0 +1,7 @@
+Testing all 2**n = 256 valid codewords
+...passed
+Testing all possible single-bit errors
+...passed
+Testing all possible two-bit errors
+...passed
+(8,4) rectangular parity code successfully passed all 0,1 and 2 bit error tests

@@ -1,6 +1,20 @@
 # template file for 6.02 PS1, Python Task 1
 import PS1_tests
 
+class Node:
+    def __init__(self, value, left = None, right = None):
+        self.value = value
+        self.left = left
+        self.right = right
+
+def populate_codes(rootNode, codes, prefix = []):
+    if rootNode.value is not None:
+        codes[rootNode.value] = prefix
+        return codes
+    populate_codes(rootNode.left, codes, prefix + [0])
+    populate_codes(rootNode.right, codes, prefix + [1])
+    return codes
+
 # arguments:
 #   plist -- sequence of (probability,object) tuples
 # return:
@@ -12,7 +26,14 @@ def huffman(pList):
     returns: {'A': [0], 'B': [1, 0], 'C': [1, 1, 0], 'D': [1, 1, 1]} 
     """
     # Your Code Here
-    pass
+    nodeList = [(element[0], Node(element[1])) for element in pList]
+    sortedList = sorted(nodeList)
+    while len(sortedList) > 1:
+        sortedList[1] = (sortedList[0][0] + sortedList[1][0], Node(None, sortedList[0][1], sortedList[1][1]))
+        del sortedList[0]
+        sortedList.sort(key=lambda x: x[0])
+    rootNode = sortedList[0][1]
+    return populate_codes(rootNode, {})
 
 if __name__ == '__main__':
     # test case 1: four symbols with equal probability
